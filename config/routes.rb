@@ -1,8 +1,12 @@
 Korning::Application.routes.draw do
 
-  resources :employees, :sales, :customers
+  resources :tests
 
-  resources :products, only: [:index, :show]
+  resources :employees, only: [:index, :show]
+  resources :customers
+  resources :sales
+  resources :products
+
 
   # resources :employees, only: [:index, :show]
   # resources :sales, only: [:index, :show]

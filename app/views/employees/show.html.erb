@@ -1,18 +1,6 @@
-<h1>Sales</h1>
+<h1><%= "#{@employee.first_name} #{@employee.last_name}" %> </h1>
 
-<%= form_tag(sales_path, method: :get) do %>
-  <%= field_set_tag 'Sales Filter' do %>
-    <%= hidden_field_tag 'filter', 'most-recent' %>
-
-    <div>
-      Display the <%= text_field_tag 'count', params[:count] || 10, size: 4 %> months previous sales:
-    </div>
-
-    <div><%= submit_tag 'Filter' %></div>
-  <% end %>
-<% end %>
-
-<table>
+    <table>
   <thead>
     <tr>
       <th>Sale id</th>
@@ -30,7 +18,7 @@
   </thead>
 
   <tbody class='table'>
-    <% @sales.each do |sale| %>
+    <% @employee.sales.order(:sale_amount).each do |sale| %>
       <tr>
         <td><%= sale.id %></td>
         <td><%= sale.employee.first_name %></td>
