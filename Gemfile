@@ -34,6 +34,8 @@ end
 
 gem 'pry-rails'
 
+gem 'quiet_assets'
+
 
 
 # Use ActiveModel has_secure_password
