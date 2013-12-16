@@ -1,7 +1,7 @@
 class SalesController < ApplicationController
 
   def index
-    @sales = Sale.all
+    @sales = Sale.order(:id)
   end
 
   def show
